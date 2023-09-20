@@ -1,9 +1,10 @@
 .pokemons {
     display: grid;
     grid-template-columns: 1fr;
-    margin: 0;
-    padding: 0;
     list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: flex-start;
 }
 
 .normal {
@@ -95,7 +96,7 @@
 
 .pokemon .name {
     text-transform: capitalize;
-    color: #fff;
+    color: #FFF;
     margin-bottom: .25rem;
 }
 
@@ -112,14 +113,15 @@
     list-style: none;
 }
 
-.pokemon .detail .types .type {
-    color: #fff;
+.pokemon .detail .types .type{
+    text-transform: capitalize;
+    color: #FFF;
     padding: .25rem .5rem;
     margin: .25rem 0;
     font-size: .625rem;
     border-radius: 1rem;
-    filter: brightness(1.1);
     text-align: center;
+    filter: brightness(1.05);
 }
 
 .pokemon .detail img {
@@ -127,23 +129,75 @@
     height: 70px;
 }
 
+.pokemon .container .abilities {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.pokemon .container .abilities .title {
+    text-transform: capitalize;
+    color: #FFF;
+    margin-bottom: .25rem;
+    
+}
+
+.pokemon .container .abilities .ability {
+    text-transform: capitalize;
+    color: #FFF;
+    padding: .25rem .25rem;
+    margin: .25rem 0;
+    font-size: .725rem;
+    border-radius: 1rem;
+    text-align: center;
+    filter: brightness(1.05);
+}
+
+.pokemon .container {
+    padding: 0 2rem;
+    overflow: hidden;
+    height: 0;
+    transition: all .5s;
+    transform: translateY(auto);
+}
+
+.pokemon:hover .container {
+    height: auto;
+    transform: translateY(0);
+}
+
 .pagination {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     width: 100%;
-    padding: 1rem;
+    padding: 0;
 }
 
 .pagination button {
-    padding: .25rem .5rem;
-    margin: .25rem 0;
+    margin-top: -0.8rem;
+    margin-bottom: 1rem;
+    padding: 1rem 1rem;
     font-size: .625rem;
-    color: #fff;
-    background-color: #6c79db;
+    background-color: #6C79DB;
     border: none;
-    border-radius: 1rem;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0.8;
+    transition: all 0.5;
+
+}
+
+.pagination button:hover {
+    cursor: pointer;
+    background-color: #949cd8;
+}
+
+.pagination button img {
+    width: 2rem;
+    height: 2rem;
 }
 
 @media screen and (min-width: 380px) {
